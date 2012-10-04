@@ -22,12 +22,14 @@ For a quick start on how to use the plugin, take a look at the demo file.
 
 The HTML required to bootstrap the option picker is a standard select element, such as:
 
-    <select>
-        <option value="1" selected>1 item</option>
-        <option value="2">2 items</option>
-        <option value="3">3 items</option>
-        <option value="4">4 items</option>
-    </select>
+```html
+<select>
+    <option value="1" selected>1 item</option>
+    <option value="2">2 items</option>
+    <option value="3">3 items</option>
+    <option value="4">4 items</option>
+</select>
+```
 
 Along with jQuery, include the `jquery.optionPicker.js` file in your page and some CSS styling for the option picker UI widget. For example styling, see the included `optionPicker.css` file in the demo.
 
@@ -35,21 +37,27 @@ Along with jQuery, include the `jquery.optionPicker.js` file in your page and so
 
 To create a standard option picker using default values, invoke the plugin on a set of one of more select elements:
 
-    $('select').optionPicker();
+```javascript
+$('select').optionPicker();
+```
 
 To override specific options for a single instance, pass in an object of options:
 
-    $('select').optionPicker({
-        cssClass: 'my-picker'
-    });
+```javascript
+$('select').optionPicker({
+    cssClass: 'my-picker'
+});
+```
 
 To set the global defaults for all new instances, override the plugin defaults object:
 
-    $.fn.optionPicker.defaults = {
-        cssClass: 'my-picker',
-        incrementHTML: '<span>Add</span>',
-        decrementHTML: '<span>Remove</span>'
-    };
+```javascript
+$.fn.optionPicker.defaults = {
+    cssClass: 'my-picker',
+    incrementHTML: '<span>Add</span>',
+    decrementHTML: '<span>Remove</span>'
+};
+```
 
 ## Options
 
@@ -69,18 +77,22 @@ The instance object for an option picker element can be retrieved using the `.da
 
 For example, to return and store a reference:
 
-    var myOptionPicker = $('.my-select').data('sodaOptionPicker');
+```javascript
+var myOptionPicker = $('.my-select').data('sodaOptionPicker');
+```
 
 Storing a reference allows you to call option picker methods programmatically, such as:
 
-    // Increment the choice
-    myOptionPicker.increment();
+```javascript
+// Increment the choice
+myOptionPicker.increment();
 
-    // Decrement the choice
-    myOptionPicker.decrement();
+// Decrement the choice
+myOptionPicker.decrement();
 
-    // Set the third option as selected
-    myOptionPicker.set(2);
+// Set the third option as selected
+myOptionPicker.set(2);
+```
 
 Available methods (and their arguments), are as follows:
 
