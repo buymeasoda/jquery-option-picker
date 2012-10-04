@@ -1,0 +1,80 @@
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.option-picker-container {
+    position: relative;
+    width: 170px;
+    border: 1px solid #4c4c4c;
+    border-radius: 2px;
+    margin: 10px;
+}
+
+.option-picker-increment,
+.option-picker-decrement,
+.option-picker-value {
+    padding: 4px 0 6px 0;
+}
+
+.option-picker-increment,
+.option-picker-decrement {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    background-color: #959595; 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#959595), to(#585858));
+    background-image: -webkit-linear-gradient(top, #959595, #585858); 
+    background-image: -moz-linear-gradient(top, #959595, #585858);
+    background-image: -ms-linear-gradient(top, #959595, #585858);
+    background-image: -o-linear-gradient(top, #959595, #585858);
+    background-image: linear-gradient(top, #959595, #585858);  
+    text-shadow: 0 1px 0 #000;
+    font-weight: bold;
+    width: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.option-picker-increment {
+    right: 0;
+}
+
+.option-picker-decrement {
+    left: 0;
+}
+
+.option-picker-increment:active,
+.option-picker-decrement:active {
+    background-color: #666; 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
+    background-image: -webkit-linear-gradient(top, #666, #333); 
+    background-image: -moz-linear-gradient(top, #666, #333);
+    background-image: -ms-linear-gradient(top, #666, #333);
+    background-image: -o-linear-gradient(top, #666, #333);
+    background-image: linear-gradient(top, #666, #333);
+}
+
+.option-picker-increment.option-picker-disabled,
+.option-picker-decrement.option-picker-disabled {
+    color: #aaa;
+    cursor: default;
+}
+
+.option-picker-value {
+    color: #222;
+    background-color: #fefefe; 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#cfcfcf));
+    background-image: -webkit-linear-gradient(top, #fefefe, #cfcfcf); 
+    background-image: -moz-linear-gradient(top, #fefefe, #cfcfcf);
+    background-image: -ms-linear-gradient(top, #fefefe, #cfcfcf);
+    background-image: -o-linear-gradient(top, #fefefe, #cfcfcf);
+    background-image: linear-gradient(top, #fefefe, #cfcfcf);
+    text-shadow: 0 1px 0 #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin: 0 30px;
+    overflow: hidden;
+    padding: 5px;
+}
