@@ -18,7 +18,7 @@ The option picker is practical for UI data entry scenarios that involve numbers,
 
 ## Setup
 
-For a quick start on how to use the plugin, take a look at the [demo file](optionPicker-demo.html).
+For a quick start on how to use the plugin, take a look at the demo file.
 
 The HTML required to bootstrap the option picker is a standard select element, such as:
 
