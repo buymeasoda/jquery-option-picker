@@ -20,7 +20,6 @@
                     this.nodes.container.append(this.nodes[name]);
                 }
             }, this));
-            this.selectElement.on('change', $.proxy(this.update, this));
             this.nodes.increment.on('click', $.proxy(this.increment, this));
             this.nodes.decrement.on('click', $.proxy(this.decrement, this));
             this.set(this.selectElement.prop('selectedIndex'));
