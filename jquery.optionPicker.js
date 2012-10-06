@@ -1,43 +1,44 @@
 (function ($) {
 
-    function OptionPicker(selectElement, settings) {
+    function OptionPicker(select, settings) {
         this.settings = settings;
-        this.selectElement = $(selectElement);
-        this.optionElements = $('option', this.selectElement);
-        this.selectSize = this.optionElements.length;
-        if (this.settings && this.selectElement && this.selectSize > 0) {
+        this.el = {
+            select: $(select),
+            options: $('option', select)
+        };
+        this.size = this.el.options.length;
+        if (this.settings && this.size) {
             this.init();
         }
     }
 
     $.extend(OptionPicker.prototype, {
         init: function () {
-            this.nodes = {};
             $.each(['container', 'increment', 'value', 'decrement'], $.proxy(function (i, name) {
-                this.nodes[name] = $(this.settings[name + 'HTML']);
-                this.nodes[name].addClass(this.settings.cssClass + '-' + name);
+                this.el[name] = $(this.settings.template[name]);
+                this.el[name].addClass(this.settings.cssClass + '-' + name);
                 if (name !== 'container') {
-                    this.nodes.container.append(this.nodes[name]);
+                    this.el.container.append(this.el[name]);
                 }
             }, this));
-            this.nodes.increment.on('click', $.proxy(this.increment, this));
-            this.nodes.decrement.on('click', $.proxy(this.decrement, this));
-            this.set(this.selectElement.prop('selectedIndex'));
-            this.selectElement.hide().after(this.nodes.container);
+            this.el.increment.on('click', $.proxy(this.increment, this));
+            this.el.decrement.on('click', $.proxy(this.decrement, this));
+            this.set(this.el.select.prop('selectedIndex'));
+            this.el.select.hide().after(this.el.container);
         },
         set: function (index) {
-            if (index >= 0 && index < this.selectSize) {
-                this.selectElement.prop('selectedIndex', index);
-                this.nodes.decrement.toggleClass(this.settings.cssClass + '-disabled', index === 0);
-                this.nodes.increment.toggleClass(this.settings.cssClass + '-disabled', index === this.selectSize - 1);
-                this.nodes.value.text(this.optionElements.eq(index).text());
+            if (index >= 0 && index < this.size) {
+                this.el.select.prop('selectedIndex', index);
+                this.el.decrement.toggleClass(this.settings.cssClass + '-disabled', index === 0);
+                this.el.increment.toggleClass(this.settings.cssClass + '-disabled', index === this.size - 1);
+                this.el.value.text(this.el.options.eq(index).text());
             }
         },
         increment: function () {
-            this.set(this.selectElement.prop('selectedIndex') + 1);
+            this.set(this.el.select.prop('selectedIndex') + 1);
         },
         decrement: function () {
-            this.set(this.selectElement.prop('selectedIndex') - 1);
+            this.set(this.el.select.prop('selectedIndex') - 1);
         }
     });
 
@@ -52,10 +53,12 @@
 
     $.fn.optionPicker.defaults = {
         cssClass: 'option-picker',
-        containerHTML: '<div></div>',
-        incrementHTML: '<div>+</div>',
-        decrementHTML: '<div>-</div>',
-        valueHTML: '<div></div>'
+        template: {
+            container: '<div></div>',
+            increment: '<div>+</div>',
+            decrement: '<div>-</div>',
+            value: '<div></div>'
+        }
     };
     
 }(jQuery));
