@@ -54,8 +54,10 @@ To set the global defaults for all new instances, override the plugin defaults o
 ```javascript
 $.fn.optionPicker.defaults = {
     cssClass: 'my-picker',
-    incrementHTML: '<span>Add</span>',
-    decrementHTML: '<span>Remove</span>'
+    template: {
+        increment: '<span>Add</span>',
+        decrement: '<span>Remove</span>'
+    }
 };
 ```
 
@@ -66,10 +68,10 @@ Configurable options are the CSS prefix that will be applied to all widget gener
 Configurable options and their default values:
 
 * cssClass `option-picker`
-* containerHTML `<div></div>`
-* incrementHTML `<div>+</div>`
-* decrementHTML `<div>-</div>`
-* valueHTML  `<div></div>`
+* template.container `<div></div>`
+* template.increment `<div>+</div>`
+* template.decrement `<div>-</div>`
+* template.value  `<div></div>`
 
 ## Advanced usage
 
