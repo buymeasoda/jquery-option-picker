@@ -7,8 +7,8 @@ body {
     position: relative;
     width: 170px;
     border: 1px solid #4c4c4c;
-    border-radius: 2px;
-    margin: 10px;
+    margin: 20px;
+    border-radius: 6px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
