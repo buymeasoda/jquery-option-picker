@@ -1,13 +1,12 @@
 var config = module.exports;
 
 config['optionPicker Test'] = {
-    env: 'browser',
+    environment: 'browser',
     rootPath: '../',
-    sources: [
-        'lib/jquery-1.8.2.min.js',
-        'jquery.optionPicker-min.js'
-    ],
-    tests: [
-        'test/*-test.js'
+    libs: ['lib/jquery-1.8.2.min.js'],
+    sources: ['jquery.optionPicker.js'],
+    tests: ['test/*-test.js'],
+    resources: [
+        {path: '/', file: 'test/fixtures/basic.html'}
     ]
 };
