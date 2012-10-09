@@ -25,22 +25,6 @@ body {
     text-align: center;
 }
 
-.option-picker-increment,
-.option-picker-decrement {
-    width: 40px;
-    color: #fff;
-    background-color: #959595; 
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#959595), to(#585858));
-    background-image: -webkit-linear-gradient(top, #959595, #585858); 
-    background-image: -moz-linear-gradient(top, #959595, #585858);
-    background-image: -ms-linear-gradient(top, #959595, #585858);
-    background-image: -o-linear-gradient(top, #959595, #585858);
-    background-image: linear-gradient(top, #959595, #585858);  
-    text-shadow: 0 1px 0 #000;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 .option-picker-increment {
     float: right;
 }
@@ -49,9 +33,23 @@ body {
     float: left;
 }
 
+.option-picker-increment,
+.option-picker-decrement {
+    width: 40px;
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.option-picker-disabled {
+    color: #aaa;
+    cursor: default;
+}
+
 .option-picker-increment:active,
 .option-picker-decrement:active {
-    background-color: #666; 
+    background-color: #666;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
     background-image: -webkit-linear-gradient(top, #666, #333);
     background-image: -moz-linear-gradient(top, #666, #333);
@@ -60,10 +58,16 @@ body {
     background-image: linear-gradient(top, #666, #333);
 }
 
-.option-picker-increment.option-picker-disabled,
-.option-picker-decrement.option-picker-disabled {
-    color: #aaa;
-    cursor: default;
+.option-picker-increment,
+.option-picker-decrement,
+.option-picker-disabled:active {
+    background-color: #959595; 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#959595), to(#585858));
+    background-image: -webkit-linear-gradient(top, #959595, #585858); 
+    background-image: -moz-linear-gradient(top, #959595, #585858);
+    background-image: -ms-linear-gradient(top, #959595, #585858);
+    background-image: -o-linear-gradient(top, #959595, #585858);
+    background-image: linear-gradient(top, #959595, #585858);  
 }
 
 .option-picker-value {
