@@ -4,29 +4,29 @@ body {
 }
 
 .option-picker-container {
-    position: relative;
     width: 170px;
-    border: 1px solid #4c4c4c;
     margin: 20px;
+    border-top: 1px solid #eee;
     border-radius: 6px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+    overflow: hidden;
 }
 
 .option-picker-increment,
 .option-picker-decrement,
 .option-picker-value {
-    padding: 4px 0 6px 0;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
 }
 
 .option-picker-increment,
 .option-picker-decrement {
-    position: absolute;
-    top: 0;
+    width: 40px;
     color: #fff;
     background-color: #959595; 
     background-image: -webkit-gradient(linear, left top, left bottom, from(#959595), to(#585858));
@@ -37,16 +37,15 @@ body {
     background-image: linear-gradient(top, #959595, #585858);  
     text-shadow: 0 1px 0 #000;
     font-weight: bold;
-    width: 32px;
     cursor: pointer;
 }
 
 .option-picker-increment {
-    right: 0;
+    float: right;
 }
 
 .option-picker-decrement {
-    left: 0;
+    float: left;
 }
 
 .option-picker-increment:active,
@@ -79,7 +78,7 @@ body {
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
-    margin: 0 30px;
+    margin: 0 40px;
     overflow: hidden;
-    padding: 5px;
+    padding: 0 5px;
 }

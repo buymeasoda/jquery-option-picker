@@ -14,7 +14,7 @@
 
     $.extend(OptionPicker.prototype, {
         init: function () {
-            $.each(['container', 'increment', 'value', 'decrement'], $.proxy(function (i, name) {
+            $.each(['container', 'decrement', 'increment', 'value'], $.proxy(function (i, name) {
                 this.el[name] = $(this.settings.template[name]);
                 this.el[name].addClass(this.settings.cssClass + '-' + name);
                 if (name !== 'container') {
