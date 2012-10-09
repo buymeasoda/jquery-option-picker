@@ -68,7 +68,7 @@ body {
 
 .option-picker-value {
     color: #222;
-    background-color: #fefefe; 
+    background-color: #cfcfcf; 
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#cfcfcf));
     background-image: -webkit-linear-gradient(top, #fefefe, #cfcfcf); 
     background-image: -moz-linear-gradient(top, #fefefe, #cfcfcf);
