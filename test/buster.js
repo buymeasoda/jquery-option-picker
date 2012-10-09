@@ -7,6 +7,7 @@ config['optionPicker Test'] = {
     sources: ['jquery.optionPicker.js'],
     tests: ['test/*-test.js'],
     resources: [
-        {path: '/', file: 'test/fixtures/basic.html'}
+        {path: '/', file: 'test/fixtures/basic.html'},
+        {path: '/basic.css', file: 'demo/optionPicker.css'}
     ]
 };
