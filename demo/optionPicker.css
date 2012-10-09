@@ -20,6 +20,7 @@ body {
 .option-picker-decrement,
 .option-picker-value {
     padding: 4px 0 6px 0;
+    text-align: center;
 }
 
 .option-picker-increment,
@@ -37,7 +38,6 @@ body {
     text-shadow: 0 1px 0 #000;
     font-weight: bold;
     width: 32px;
-    text-align: center;
     cursor: pointer;
 }
 
