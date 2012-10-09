@@ -9,6 +9,11 @@ body {
     border: 1px solid #4c4c4c;
     border-radius: 2px;
     margin: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .option-picker-increment,
