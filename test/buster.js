@@ -8,6 +8,5 @@ config['optionPicker Test'] = {
     tests: ['test/*-test.js'],
     resources: [
         {path: '/', file: 'test/fixtures/basic.html'},
-        {path: '/basic.css', file: 'demo/optionPicker.css'}
     ]
 };
