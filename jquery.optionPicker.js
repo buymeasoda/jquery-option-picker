@@ -21,6 +21,7 @@
                     this.el.container.append(this.el[name]);
                 }
             }, this));
+            this.widget = this.el.container;
             this.el.increment.on('click', $.proxy(this.increment, this));
             this.el.decrement.on('click', $.proxy(this.decrement, this));
             this.set(this.el.select.prop('selectedIndex'));
