@@ -50,9 +50,9 @@ buster.testCase('jQuery optionPicker', {
             assert.equals(this.optionPicker.el.value.text(), 'Apple');
             this.optionPicker.increment();
             assert.equals(this.optionPicker.el.value.text(), 'Orange');
-            this.optionPicker.el.increment.click();
+            this.optionPicker.el.increment.trigger('touchstart').trigger('click');
             assert.equals(this.optionPicker.el.value.text(), 'Banana');
-            this.optionPicker.el.decrement.click();
+            this.optionPicker.el.decrement.trigger('touchstart').trigger('click');
             assert.equals(this.optionPicker.el.value.text(), 'Orange');
             this.optionPicker.decrement();
             assert.equals(this.optionPicker.el.value.text(), 'Apple');
@@ -63,7 +63,7 @@ buster.testCase('jQuery optionPicker', {
             assert.equals(this.select.val(), 'apple');
             this.optionPicker.decrement();
             assert.equals(this.select.val(), 'apple');
-            this.optionPicker.el.decrement.click();
+            this.optionPicker.el.decrement.trigger('touchstart').trigger('click');
             assert.equals(this.select.val(), 'apple');
         },
 
@@ -72,7 +72,7 @@ buster.testCase('jQuery optionPicker', {
             assert.equals(this.select.val(), 'strawberry');
             this.optionPicker.increment();
             assert.equals(this.select.val(), 'strawberry');
-            this.optionPicker.el.increment.click();
+            this.optionPicker.el.increment.trigger('touchstart').trigger('click');
             assert.equals(this.select.val(), 'strawberry');
         },
 
