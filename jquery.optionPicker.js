@@ -14,6 +14,7 @@
 
     $.extend(OptionPicker.prototype, {
         init: function () {
+            var eventType = ('ontouchstart' in window) ? 'touchstart' : 'click';
             $.each(['container', 'decrement', 'increment', 'value'], $.proxy(function (i, name) {
                 this.el[name] = $(this.settings.template[name]);
                 this.el[name].addClass(this.settings.cssClass + '-' + name);
@@ -22,8 +23,8 @@
                 }
             }, this));
             this.widget = this.el.container;
-            this.el.increment.on('click', $.proxy(this.increment, this));
-            this.el.decrement.on('click', $.proxy(this.decrement, this));
+            this.el.increment.on(eventType, $.proxy(this.increment, this));
+            this.el.decrement.on(eventType, $.proxy(this.decrement, this));
             this.set(this.el.select.prop('selectedIndex'));
             this.el.select.hide().after(this.el.container);
         },
