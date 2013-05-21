@@ -31,6 +31,7 @@
         set: function (index) {
             if (index >= 0 && index < this.size) {
                 this.el.select.prop('selectedIndex', index);
+                this.el.select.trigger('change');
                 this.el.decrement.toggleClass(this.settings.cssClass + '-disabled', index === 0);
                 this.el.increment.toggleClass(this.settings.cssClass + '-disabled', index === this.size - 1);
                 this.el.value.text(this.el.options.eq(index).text());
