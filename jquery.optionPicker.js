@@ -25,8 +25,8 @@
             this.widget = this.el.container;
             this.el.increment.on(eventType, $.proxy(this.increment, this));
             this.el.decrement.on(eventType, $.proxy(this.decrement, this));
-            this.el.select.on('change', $.proxy(this.change, this));
             this.update(this.el.select.prop('selectedIndex'));
+            this.el.select.on('change', $.proxy(this.change, this));
             this.el.select.hide().after(this.el.container);
         },
         update: function (index) {
