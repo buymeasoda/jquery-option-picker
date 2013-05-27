@@ -25,6 +25,7 @@
             this.widget = this.el.container;
             this.el.increment.on(eventType, $.proxy(this.increment, this));
             this.el.decrement.on(eventType, $.proxy(this.decrement, this));
+            this.el.select.on('change', $.proxy(this.change, this));
             this.update(this.el.select.prop('selectedIndex'));
             this.el.select.hide().after(this.el.container);
         },
@@ -37,6 +38,9 @@
             if (index >= 0 && index < this.size) {
                 this.el.select.prop('selectedIndex', index);
                 this.update(index);
+                this.optionPickerTriggered = true;
+                this.el.select.trigger('change');
+                this.optionPickerTriggered = false;
             }
         },
         increment: function () {
@@ -44,6 +48,11 @@
         },
         decrement: function () {
             this.set(this.el.select.prop('selectedIndex') - 1);
+        },
+        change: function () {
+            if (!this.optionPickerTriggered) {
+                this.update(this.el.select.prop('selectedIndex'));
+            }
         }
     });
 
