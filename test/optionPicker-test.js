@@ -92,8 +92,21 @@ buster.testCase('jQuery optionPicker', {
             assert.equals(this.optionPicker.widget.html(), '<div class="option-picker-decrement option-picker-disabled">-</div><div class="option-picker-increment">+</div><div class="option-picker-value">Apple</div>');
         },
 
-        '//is fully tested': function () {
-            assert(false);
+        'manually setting selectedIndex maps to correct state on next action': function () {
+            this.select.prop('selectedIndex', 2);
+            this.optionPicker.increment();
+            assert.equals(this.select.prop('selectedIndex'), 3);
+            this.select.prop('selectedIndex', 1);
+            this.optionPicker.decrement();
+            assert.equals(this.select.prop('selectedIndex'), 0);
+        },
+
+        'deselected selectedIndex maps to correct state on next action': function () {
+            this.select.prop('selectedIndex', -1);
+            this.optionPicker.decrement();
+            assert.equals(this.select.prop('selectedIndex'), -1);
+            this.optionPicker.increment();
+            assert.equals(this.select.prop('selectedIndex'), 0);
         }
 
     }
